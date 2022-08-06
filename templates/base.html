@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="">
+  <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+  <section>
+  <nav class="navbar">
+    <a href="/">Home</a>
+  </nav>
+  <br>
+  </section>
+  <!-- <section class="messages">
+    {% for category,msg in get_flashed_messages(with_categories=true) %}
+    <p class ="{{category}}">{{msg}}</p>
+    {% endfor %}
+  </section> -->
+  {% for msg in get_flashed_messages() %}
+    <p>{{ msg }}</p>
+  {% endfor %}
+  {% block content %}
+  {% endblock %}
+</body>
+</html>
